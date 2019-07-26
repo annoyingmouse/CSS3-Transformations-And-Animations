@@ -228,12 +228,12 @@ new Vue({
         }),
         getStatus(x, y) {
             let place = false;
-            _.forEach(this.matrices[this.num], function (row, rowIndex) {
-                _.forEach(row, function (cell, cellIndex) {
-                    if (cell && rowIndex + 1 === y && cellIndex + 1 === x) {
+            this.matrices[this.num].forEach((c, i) => {
+                c.forEach((cc, ii) => {
+                    if (cc && i + 1 === y && ii + 1 === x) {
                         place = true;
                     }
-                })
+                });
             });
             return place;
         },
