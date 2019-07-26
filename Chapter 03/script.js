@@ -213,8 +213,6 @@ new Vue({
             return {
                 height: (this.height * this.d) + ((this.height - 1) * 3) + "px",
                 width: (this.width * this.d) + ((this.width - 1) * 3) + "px",
-                gridColumns: _.fill(Array(this.width), "1fr").join(" "),
-                gridRows: _.fill(Array(this.height), "1fr").join(" "),
                 gridTemplateColumns: _.fill(Array(this.width), "1fr").join(" "),
                 gridTemplateRows: _.fill(Array(this.height), "1fr").join(" "),
             }
