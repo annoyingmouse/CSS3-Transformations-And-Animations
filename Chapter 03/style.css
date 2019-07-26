@@ -1,0 +1,17 @@
+.number-output {
+  display: -ms-grid;
+  display: grid; }
+  .number-output .block {
+    z-index: 1;
+    perspective: 1000px; }
+    .number-output .block .side.front {
+      background-color: #000000;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; }
+      .number-output .block .side.front.back {
+        background-color: #eeeeee;
+        transform: rotateY(0deg); }
+
+/*# sourceMappingURL=style.css.map */

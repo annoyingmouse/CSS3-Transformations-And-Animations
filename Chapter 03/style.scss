@@ -1,0 +1,34 @@
+.number-output {
+    display: -ms-grid;
+    display: grid;
+
+    .block {
+        z-index: 1;
+        perspective: 1000px;
+        .side {
+            &.front {
+                background-color: #000000;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                &.back {
+                    background-color: #eeeeee;
+                    transform: rotateY(0deg);
+                }
+            }
+
+        }
+        //&.on {
+        //    .side {
+        //        &.front {
+        //            transform: rotateY(0deg);
+        //            &.back {
+        //                transform: rotateY(-179.9deg);
+        //            }
+        //        }
+        //
+        //    }
+        //}
+    }
+}

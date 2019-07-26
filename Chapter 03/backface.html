@@ -17,31 +17,26 @@
 <style>
 div.card div
 {
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
 div.card div.back
 {
-	-webkit-transform: perspective(400px) rotateY(0deg);
 	transform: perspective(400px) rotateY(0deg);
 }
 
 div.front
 {
-	-webkit-transform: perspective(400px) rotateY(-179.9deg);
 	transform: perspective(400px) rotateY(-179.9deg);
 }
 
 div.card:hover div.back
 {
-	-webkit-transform: perspective(400px) rotateY(179.9deg);
 	transform: perspective(400px) rotateY(179.9deg);
 }
 
 div.card:hover div.front
 {
-	-webkit-transform: perspective(400px) rotateY(0deg);
 	transform: perspective(400px) rotateY(0deg);
 }
 </style>
