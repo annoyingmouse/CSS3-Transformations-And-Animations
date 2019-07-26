@@ -3,7 +3,7 @@ new Vue({
     data: {
         width: 10,
         height: 18,
-        d: 40,
+        d: 30,
         num: 9,
         matrices: {
             0: [
@@ -209,7 +209,7 @@ new Vue({
         }
     },
     computed: {
-        gridTemplate: function () {
+        gridTemplate() {
             return {
                 height: (this.height * this.d) + ((this.height - 1) * 3) + "px",
                 width: (this.width * this.d) + ((this.width - 1) * 3) + "px",
@@ -221,25 +221,20 @@ new Vue({
         },
     },
     methods: {
-        shouldPlace: function (x, y) {
+        shouldPlace(x, y) {
             if (y > 3 && y < 8 && x > 3 && x < 8) {
                 return false
             }
-            if (y > 10 && y < 16 && x > 3 && x < 8) {
-                return false
-            }
-            return true
+            return !(y > 10 && y < 16 && x > 3 && x < 8);
+
         },
-        getStyle: function (x, y) {
+        getStyle(x, y) {
             return {
                 gridColumn: x,
                 gridRow: y,
-                width: this.d + "px",
-                height: this.d + "px",
-                margin: "5px"
             }
         },
-        getStatus: function (x, y) {
+        getStatus(x, y) {
             var place = false;
             _.forEach(this.matrices[this.num], function (row, rowIndex) {
                 _.forEach(row, function (cell, cellIndex) {
@@ -247,20 +242,19 @@ new Vue({
                         place = true;
                     }
                 })
-            })
+            });
             return place;
         },
-        updateNum: function () {
-            var temp = this.num - 1
+        updateNum() {
+            const temp = this.num - 1;
             if (temp < 0) {
                 this.num = 9;
             } else {
                 this.num -= 1;
             }
-            console.log(this.num);
         }
     },
     mounted: function () {
-        setInterval(this.updateNum, 7000);
+        setInterval(this.updateNum, 1000);
     }
 });
