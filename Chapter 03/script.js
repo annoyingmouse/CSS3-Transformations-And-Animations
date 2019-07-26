@@ -223,8 +223,8 @@ new Vue({
     methods: {
         shouldPlace: (x, y) => !(y > 10 && y < 16 && x > 3 && x < 8) && !(y > 3 && y < 8 && x > 3 && x < 8),
         getStyle: (x, y) => ({
-                gridColumn: x,
-                gridRow: y,
+            gridColumn: x,
+            gridRow: y,
         }),
         getStatus(x, y) {
             let place = false;
