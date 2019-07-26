@@ -12,12 +12,14 @@
          v-bind:style="gridTemplate">
         <template v-for="x in width">
             <div v-for="y in height"
+                 v-bind:class="{on: getStatus(x, y)}"
                  v-if="shouldPlace(x, y)"
                  class="block"
                  v-bind:style="getStyle(x, y)">
-                <div class="side front"
-                     v-bind:class="{back: getStatus(x, y)}"></div>
-
+                <div class="card">
+                    <div class="front face"></div>
+                    <div class="back face"></div>
+                </div>
             </div>
         </template>
     </div>

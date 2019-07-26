@@ -3,7 +3,7 @@ new Vue({
     data: {
         width: 10,
         height: 18,
-        d: 25,
+        d: 40,
         num: 9,
         matrices: {
             0: [
@@ -236,7 +236,7 @@ new Vue({
                 gridRow: y,
                 width: this.d + "px",
                 height: this.d + "px",
-                margin: "1px"
+                margin: "5px"
             }
         },
         getStatus: function (x, y) {
@@ -261,6 +261,6 @@ new Vue({
         }
     },
     mounted: function () {
-        setInterval(this.updateNum, 2000);
+        setInterval(this.updateNum, 7000);
     }
 });
